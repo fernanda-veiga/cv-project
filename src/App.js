@@ -1,8 +1,4 @@
 import React, { Component } from "react";
-import TopBar from "./components/TopBar";
-import ProfileSection from "./components/ProfileSection";
-import InfoSection from "./components/InfoSection";
-//import uniqid from "uniqid";
 import "./styles/App.css";
 
 class App extends Component {
@@ -10,17 +6,51 @@ class App extends Component {
     super(props);
     this.state = {
       isPreviewMode: false,
-      profileSection: {
+      ProfileSection: {
         name: "",
         position: "",
       },
-      infoSection: {
-        telephone: "",
+      InfoSection: {
+        phone: "",
         email: "",
         location: "",
         linkedin: "",
-        github: "",
       },
+      Skills: [],
+      Languages: [],
+      Experience: [],
+      Education: [],
+    };
+  }
+
+  render() {
+    return <div className="App"></div>;
+  }
+}
+
+export default App;
+
+/*import React, { Component } from "react";
+import TopBar from "./components/TopBar";
+import ProfileSection from "./components/ProfileSection";
+import InfoSection from "./components/InfoSection";
+import "./styles/App.css";
+import "./styles/ProfileSection.css";
+import "./styles/TopBar.css";
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isPreviewMode: false,
+      name: "",
+      position: "",
+      phone: "",
+      email: "",
+      location: "",
+      linkedin: "",
+      skills: [],
+      languages: [],
     };
   }
 
@@ -29,9 +59,9 @@ class App extends Component {
   };
 
   handleFormChange = (event) => {
-    const changedProfileSection = this.state.profileSection;
-    changedProfileSection[event.target.id] = event.target.value;
-    this.setState({ profileSection: changedProfileSection });
+    let changedProperty = this.state[event.target.id];
+    changedProperty = event.target.value;
+    this.setState({ profileSection: changedProperty });
   };
 
   render() {
@@ -56,17 +86,17 @@ function Resume(props) {
         handleFormChange={props.handleFormChange}
         isPreviewMode={props.isPreviewMode}
       />
-      <section className="resume-content">
-        <section className="resume-content-left">
-          <InfoSection
-            infoSection={props.state.infoSection}
-            isPreviewMode={props.isPreviewMode}
-          />
-        </section>
-        <section className="resume-content-right"></section>
+      <section className="LeftSection">
+        <InfoSection
+          infoSection={props.state.infoSection}
+          handleFormChange={props.handleFormChange}
+          isPreviewMode={props.isPreviewMode}
+        />
       </section>
+      <section className="resume-content-right"></section>
     </div>
   );
 }
 
 export default App;
+*/

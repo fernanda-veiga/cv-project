@@ -1,0 +1,17 @@
+.profileSection {
+  padding: 2vw;
+  border-bottom: 2px solid gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+}
+
+.profileSection #name {
+  font-size: 3vw;
+}
+
+.profileSection #position {
+  font-size: 2vw;
+}

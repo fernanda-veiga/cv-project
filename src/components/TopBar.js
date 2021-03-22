@@ -2,7 +2,7 @@ import React from "react";
 
 function TopBar(props) {
   return (
-    <div className="top-bar">
+    <div className="TopBar">
       <div className="logo">
         <i className="fas fa-briefcase"></i>
         <h1>Resume Builder</h1>

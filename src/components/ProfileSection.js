@@ -20,7 +20,7 @@ function ProfileSectionInput(props) {
   const profileValues = Object.entries(props.profileSection);
 
   return (
-    <section className="resume-profile">
+    <section className="profileSection">
       {profileValues.map((entry, index) => {
         return (
           <input
@@ -41,7 +41,7 @@ function ProfileSectionPreview(props) {
   const profileValues = Object.entries(props.profileSection);
 
   return (
-    <section className="resume-profile">
+    <section className="profileSection">
       {profileValues.map((entry, index) => {
         return (
           <p key={`profile-form-input-${index}`} id={entry[0]}>
