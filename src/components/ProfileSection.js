@@ -1,7 +1,6 @@
 import React from "react";
 
 function ProfileSection(props) {
-  //const profileValues = Object.entries(props.profileSection);
   console.log(props.isPreviewMode);
   if (props.isPreviewMode === true) {
     console.log("preview");
