@@ -1,36 +1,30 @@
 .TopBar {
-  width: 100vw;
-  padding: 20px;
-  background: black;
+  background: #1c2833;
+  padding: 10px;
+  color: #ffffff;
+  /*Flex*/
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo i {
-  font-size: 30px;
 }
 
 /*Toggle slider*/
-.toggle-div {
+.TopBar-toggle {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 5px;
 }
 
+.TopBar-toggle p {
+  font-size: 14px;
+}
+
 .toggle {
   position: relative;
   display: inline-block;
-  width: 50px;
-  height: 25px;
+  width: 40px;
+  height: 20px;
 }
 
 .toggle input {
@@ -53,8 +47,8 @@
 }
 
 .toggle-slider:before {
-  height: 20px;
-  width: 20px;
+  height: 15px;
+  width: 15px;
   border-radius: 50%;
   content: "";
   position: absolute;
@@ -69,5 +63,5 @@ input:checked + .toggle-slider {
 }
 
 input:checked + .toggle-slider:before {
-  left: 27.5px;
+  left: 22.5px;
 }

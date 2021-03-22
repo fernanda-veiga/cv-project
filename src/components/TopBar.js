@@ -2,20 +2,21 @@ import React from "react";
 
 function TopBar(props) {
   return (
-    <div className="TopBar">
-      <div className="logo">
-        <i className="fas fa-briefcase"></i>
-        <h1>Resume Builder</h1>
+    <section className="TopBar">
+      <div className="TopBar-logo">
+        <h1>
+          <i className="fas fa-briefcase"></i> Resume Builder
+        </h1>
       </div>
       <ToggleButton togglePreviewMode={props.togglePreviewMode} />
-    </div>
+    </section>
   );
 }
 
 function ToggleButton(props) {
   return (
-    <div className="toggle-div">
-      <p>Preview Mode</p>
+    <div className="TopBar-toggle">
+      <p>Preview</p>
       <label className="toggle">
         <input
           className="toggle-checkbox"

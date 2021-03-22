@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import TopBar from "./components/TopBar";
 import "./styles/App.css";
+import "./styles/TopBar.css";
 
 class App extends Component {
   constructor(props) {
@@ -23,10 +25,33 @@ class App extends Component {
     };
   }
 
+  togglePreviewMode = () => {
+    this.setState({ isPreviewMode: !this.state.isPreviewMode });
+  };
+
   render() {
-    return <div className="App"></div>;
+    return (
+      <div className="App">
+        <TopBar togglePreviewMode={this.togglePreviewMode} />
+        {/*<Resume />*/}
+      </div>
+    );
   }
 }
+
+/*
+<App />
+  <TopBar />
+  <Resume />
+    <ProfileSection />
+    <LeftSection />
+      <InfoSection />
+      <Skills />
+      <Languages />
+    <RightSection />
+      <Experience />
+      <Education />
+*/
 
 export default App;
 
@@ -34,26 +59,11 @@ export default App;
 import TopBar from "./components/TopBar";
 import ProfileSection from "./components/ProfileSection";
 import InfoSection from "./components/InfoSection";
-import "./styles/App.css";
 import "./styles/ProfileSection.css";
 import "./styles/TopBar.css";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isPreviewMode: false,
-      name: "",
-      position: "",
-      phone: "",
-      email: "",
-      location: "",
-      linkedin: "",
-      skills: [],
-      languages: [],
-    };
-  }
-
+  
   togglePreviewMode = () => {
     this.setState({ isPreviewMode: !this.state.isPreviewMode });
   };
