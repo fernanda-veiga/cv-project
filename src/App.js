@@ -22,7 +22,10 @@ class App extends Component {
         location: "",
         linkedin: "",
       },
-      Skills: [],
+      Skills: {
+        allSkills: [],
+        newSkill: "",
+      },
       Languages: [],
       Experience: [],
       Education: [],
@@ -41,6 +44,26 @@ class App extends Component {
     this.setState({ InfoSection: changedProperty });
   };
 
+  handleSkillChange = (event) => {
+    let changedProperty = this.state.Skills;
+    changedProperty.newSkill = event.target.value;
+    this.setState({ Skills: changedProperty });
+  };
+
+  addSkill = () => {
+    const changedProperty = this.state.Skills;
+    changedProperty.allSkills.push(changedProperty.newSkill);
+    changedProperty.newSkill = "";
+    this.setState({ Skills: changedProperty });
+  };
+
+  deleteSkill = (event) => {
+    const changedProperty = this.state.Skills;
+    const index = event.target.id.replace(/^\D+/g, "");
+    changedProperty.allSkills.splice(index, 1);
+    this.setState({ Skills: changedProperty });
+  };
+
   togglePreviewMode = () => {
     console.log(this.state.isPreviewMode);
     this.setState({ isPreviewMode: !this.state.isPreviewMode });
@@ -54,6 +77,9 @@ class App extends Component {
           state={this.state}
           handleProfileChange={this.handleProfileChange}
           handleInfoChange={this.handleInfoChange}
+          handleSkillChange={this.handleSkillChange}
+          addSkill={this.addSkill}
+          deleteSkill={this.deleteSkill}
         />
       </div>
     );

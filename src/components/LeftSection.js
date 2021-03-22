@@ -11,7 +11,13 @@ function LeftSection(props) {
         infoSection={props.infoSection}
         handleInfoChange={props.handleInfoChange}
       />
-      <Skills isPreviewMode={props.isPreviewMode} skills={props.skills} />
+      <Skills
+        isPreviewMode={props.isPreviewMode}
+        skills={props.skills}
+        handleSkillChange={props.handleSkillChange}
+        addSkill={props.addSkill}
+        deleteSkill={props.deleteSkill}
+      />
       <Languages
         isPreviewMode={props.isPreviewMode}
         laguanges={props.languages}

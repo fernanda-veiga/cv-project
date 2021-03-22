@@ -1,3 +1,5 @@
+import React from "react";
+
 function Experience(props) {
   if (props.isPreviewMode === true) {
     return <ExperiencePreview experience={props.experience} />;

@@ -17,6 +17,9 @@ function Resume(props) {
         infoSection={props.state.InfoSection}
         handleInfoChange={props.handleInfoChange}
         skills={props.state.Skills}
+        handleSkillChange={props.handleSkillChange}
+        addSkill={props.addSkill}
+        deleteSkill={props.deleteSkill}
         languages={props.state.Languages}
       />
       <RightSection

@@ -23,12 +23,17 @@
 }
 .InfoSection input,
 .InfoSection p {
+  background: lightseagreen;
   width: 90%;
   font-size: 12px;
   display: flex;
   align-items: center;
 }
+.InfoSection p {
+  word-break: break-word;
+}
 .icon {
+  background: chartreuse;
   width: 10%;
   font-size: 12px;
   display: flex;

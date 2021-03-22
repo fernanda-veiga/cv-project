@@ -1,3 +1,5 @@
+import React from "react";
+
 function Education(props) {
   if (props.isPreviewMode === true) {
     return <EducationPreview education={props.education} />;
