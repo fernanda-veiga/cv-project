@@ -1,6 +1,6 @@
 function Languages(props) {
   if (props.isPreviewMode === true) {
-    return <languagesPreview languages={props.languages} />;
+    return <LanguagesPreview languages={props.languages} />;
   } else {
     return <LanguagesInput languages={props.languages} />;
   }
@@ -12,14 +12,14 @@ function LanguagesInput(props) {
   return (
     <section className="LanguagesSection">
       <h5>LANGUAGES</h5>
-      <button type="button" className="langauges-button">
+      <button type="button" className="languages-button">
         <i class="fas fa-plus"></i>
       </button>
     </section>
   );
 }
 
-function languagesPreview(props) {
+function LanguagesPreview(props) {
   return;
 }
 
