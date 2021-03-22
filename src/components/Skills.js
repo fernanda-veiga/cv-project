@@ -37,12 +37,16 @@ function SkillsInput(props) {
 }
 
 function SkillsPreview(props) {
+  const currentSkills = props.skills.allSkills;
+
   return (
     <section className="SkillsSection">
       <h5>SKILLS</h5>
-      <button type="button" className="skills-button">
-        <i className="fas fa-plus"></i>
-      </button>
+      {currentSkills.map((skill, index) => {
+        return (
+          <div key={`skill-${index}`} id={`skill-${index}`}>{`${skill}`}</div>
+        );
+      })}
     </section>
   );
 }
@@ -69,38 +73,5 @@ function CurrentSkills(props) {
     });
   }
 }
-
-/*function InfoSection(props) {
-  return <section className="Skills"></section>;
-}
-
-//handleFormChange={props.handleFormChange}
-
-
-
-function InfoSectionPreview(props) {
-  const infoValues = Object.entries(props.infoSection);
-  const icons = [
-    <i className="fas fa-phone"></i>,
-    <i className="fas fa-envelope"></i>,
-    <i className="fas fa-map-marker-alt"></i>,
-    <i className="fab fa-linkedin-in"></i>,
-  ];
-
-  return (
-    <section className="InfoSection">
-      {infoValues.map((entry, index) => {
-        return (
-          <div>
-            <div>{icons[index]}</div>
-            <p key={`InfoSection-${index}`} id={entry[0]}>
-              {entry[1]}
-            </p>
-          </div>
-        );
-      })}
-    </section>
-  );
-}*/
 
 export default Skills;
