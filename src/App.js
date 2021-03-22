@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import TopBar from "./components/TopBar";
+import Resume from "./components/Resume";
 import "./styles/App.css";
 import "./styles/TopBar.css";
+import "./styles/Resume.css";
 
 class App extends Component {
   constructor(props) {
@@ -26,6 +28,7 @@ class App extends Component {
   }
 
   togglePreviewMode = () => {
+    console.log(this.state.isPreviewMode);
     this.setState({ isPreviewMode: !this.state.isPreviewMode });
   };
 
@@ -33,7 +36,7 @@ class App extends Component {
     return (
       <div className="App">
         <TopBar togglePreviewMode={this.togglePreviewMode} />
-        {/*<Resume />*/}
+        <Resume state={this.state} />
       </div>
     );
   }
@@ -88,25 +91,7 @@ class App extends Component {
   }
 }
 
-function Resume(props) {
-  return (
-    <div className="resume">
-      <ProfileSection
-        profileSection={props.state.profileSection}
-        handleFormChange={props.handleFormChange}
-        isPreviewMode={props.isPreviewMode}
-      />
-      <section className="LeftSection">
-        <InfoSection
-          infoSection={props.state.infoSection}
-          handleFormChange={props.handleFormChange}
-          isPreviewMode={props.isPreviewMode}
-        />
-      </section>
-      <section className="resume-content-right"></section>
-    </div>
-  );
-}
+
 
 export default App;
 */

@@ -1,10 +1,12 @@
 .App {
   width: 100vw;
   background: #d5d8dc;
-  /*padding: 0 10vw 50px 10vw;
-  
+  /*Flex*/
   display: flex;
   flex-direction: column;
+  /*padding: 0 10vw 50px 10vw;
+  
+  
   align-items: center;
   gap: 50px;*/
 }

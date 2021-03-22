@@ -1,6 +1,10 @@
 import React from "react";
 
-function ProfileSection(props) {
+function RightSection(props) {
+  return <section className="RightSection"></section>;
+}
+
+/*function ProfileSection(props) {
   if (props.isPreviewMode === true) {
     //return <ProfileSectionPreview profileSection={props.profileSection} />;
     return;
@@ -8,29 +12,30 @@ function ProfileSection(props) {
     console.log(props.profileSection);
     return <ProfileSectionInput profileSection={props.profileSection} />;
   }
-}
+}*/
 
 /*handleFormChange={props.handleFormChange}*/
 
-function ProfileSectionInput(props) {
-  let profileValues = Object.entries(props.profileSection);
+/*function ProfileSectionInput(props) {
+  const profileValues = Object.entries(props.profileSection);
 
   return (
-    <section className="ProfileSection">
+    <section className="profileSection">
       {profileValues.map((entry, index) => {
         return (
           <input
-            key={`ProfileSection-${index}`}
+            key={`profile-form-input-${index}`}
             id={entry[0]}
             type="text"
+            value={entry[1]}
             placeholder={entry[0].charAt(0).toUpperCase() + entry[0].slice(1)}
           ></input>
         );
       })}
     </section>
   );
-}
-//value={entry[1]}
+}*/
+
 //onChange={props.handleFormChange}
 
 /*function ProfileSectionPreview(props) {
@@ -49,4 +54,4 @@ function ProfileSectionInput(props) {
   );
 }*/
 
-export default ProfileSection;
+export default RightSection;
