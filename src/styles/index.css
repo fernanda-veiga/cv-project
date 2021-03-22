@@ -7,7 +7,7 @@
 
 .App {
   width: 100vw;
-  padding: 0 50px 50px 50px;
+  padding: 0 10vw 50px 10vw;
   background: #aaaaaa;
   display: flex;
   flex-direction: column;
@@ -40,5 +40,24 @@
 }
 
 .resume {
+  padding: 3vw;
+  width: 80vw;
+  height: 113vw;
   background: white;
+}
+
+.resume-profile {
+  padding: 2vw;
+  border-bottom: 2px solid gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+}
+.resume-profile #name {
+  font-size: 3vw;
+}
+.resume-profile #position {
+  font-size: 2vw;
 }

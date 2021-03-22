@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import TopBar from "./components/TopBar";
+import ProfileSection from "./components/ProfileSection";
 //import uniqid from "uniqid";
 import "./styles/App.css";
 
@@ -11,6 +12,8 @@ class App extends Component {
       profileSection: {
         name: "",
         position: "",
+      },
+      infoSection: {
         telephone: "",
         email: "",
         location: "",
@@ -20,9 +23,14 @@ class App extends Component {
     };
   }
 
-  /*togglePreviewMode = (event) => {
-    this.setState({ isPreviewMode: !this.state.isPreviewMode });
-  };*/
+  togglePreviewMode = (event) => {
+    if (event.target.checked === true) {
+      this.setState({ isPreviewMode: true });
+    } else {
+      this.setState({ isPreviewMode: false });
+    }
+    //console.log(this.state.isPreviewMode);
+  };
 
   handleFormChange = (event) => {
     const changedProfileSection = this.state.profileSection;
@@ -35,36 +43,30 @@ class App extends Component {
 
     return (
       <div className="App">
-        <TopBar />
-        <div className="resume">
-          <ProfileSection
-            profileSection={this.state.profileSection}
-            handleFormChange={this.handleFormChange}
-          />
-        </div>
+        <TopBar togglePreviewMode={this.togglePreviewMode} />
+        <Resume
+          profileSection={this.state.profileSection}
+          handleFormChange={this.handleFormChange}
+          isPreviewMode={this.state.isPreviewMode}
+        />
       </div>
     );
   }
 }
 
-function ProfileSection(props) {
-  const profileValues = Object.entries(props.profileSection);
-
+function Resume(props) {
   return (
-    <form key="profile-form">
-      {profileValues.map((entry, index) => {
-        return (
-          <input
-            key={`profile-form-input-${index}`}
-            id={entry[0]}
-            type="text"
-            value={entry[1]}
-            placeholder={entry[0].charAt(0).toUpperCase() + entry[0].slice(1)}
-            onChange={props.handleFormChange}
-          ></input>
-        );
-      })}
-    </form>
+    <div className="resume">
+      <ProfileSection
+        profileSection={props.profileSection}
+        handleFormChange={props.handleFormChange}
+        isPreviewMode={props.isPreviewMode}
+      />
+      <section className="resume-content">
+        <section className="resume-content-left"></section>
+        <section className="resume-content-right"></section>
+      </section>
+    </div>
   );
 }
 
