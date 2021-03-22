@@ -1,29 +1,33 @@
 import React, { Component } from "react";
+import TopBar from "./components/TopBar";
+//import uniqid from "uniqid";
 import "./styles/App.css";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstName: "",
       isPreviewMode: false,
-      /*lastName: "",
-      profession: "",
-      city: "",
-      country: "",
-      email: "",*/
+      profileSection: {
+        name: "",
+        position: "",
+        telephone: "",
+        email: "",
+        location: "",
+        linkedin: "",
+        github: "",
+      },
     };
   }
 
-  togglePreviewMode = (event) => {
-    console.log(`toggle: ${this.state.isPreviewMode}`);
+  /*togglePreviewMode = (event) => {
     this.setState({ isPreviewMode: !this.state.isPreviewMode });
-    console.log(event.target.checked);
-  };
+  };*/
 
   handleFormChange = (event) => {
-    this.setState({ firstName: event.target.value });
-    console.log(event.target.value);
+    const changedProfileSection = this.state.profileSection;
+    changedProfileSection[event.target.id] = event.target.value;
+    this.setState({ profileSection: changedProfileSection });
   };
 
   render() {
@@ -31,48 +35,53 @@ class App extends Component {
 
     return (
       <div className="App">
-        <div className="Profile">
-          <PreviewOrProfile
-            isPreviewMode={this.state.isPreviewMode}
-            firstName={this.state.firstName}
+        <TopBar />
+        <div className="resume">
+          <ProfileSection
+            profileSection={this.state.profileSection}
             handleFormChange={this.handleFormChange}
           />
-          <form>
-            <label htmlFor="preview">Preview Mode:</label>
-            <input
-              type="checkbox"
-              id="preview"
-              name="preview"
-              onChange={this.togglePreviewMode}
-            ></input>
-          </form>
         </div>
       </div>
     );
   }
 }
 
-function PreviewOrProfile(props) {
+function ProfileSection(props) {
+  const profileValues = Object.entries(props.profileSection);
+
+  return (
+    <form key="profile-form">
+      {profileValues.map((entry, index) => {
+        return (
+          <input
+            key={`profile-form-input-${index}`}
+            id={entry[0]}
+            type="text"
+            value={entry[1]}
+            placeholder={entry[0].charAt(0).toUpperCase() + entry[0].slice(1)}
+            onChange={props.handleFormChange}
+          ></input>
+        );
+      })}
+    </form>
+  );
+}
+
+/*function PreviewOrProfile(props) {
   console.log(props.isPreviewMode);
   if (props.isPreviewMode === true) {
     console.log("preview");
     return <div>{props.firstName}</div>;
   } else {
-    console.log("not preview");
     return (
-      <form>
-        <label htmlFor="first-name">First name:</label>
-        <input
-          type="text"
-          id="first-name"
-          name="first-name"
-          value={props.firstName}
-          onChange={props.handleFormChange}
-        ></input>
-      </form>
+      <ProfileSection
+        profileSection={props.profileSection}
+        handleFormChange={props.handleFormChange}
+      />
     );
   }
-}
+}*/
 
 /*class Preview extends Component {
   render() {
