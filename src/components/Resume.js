@@ -10,10 +10,12 @@ function Resume(props) {
       <ProfileSection
         isPreviewMode={props.state.isPreviewMode}
         profileSection={props.state.ProfileSection}
+        handleProfileChange={props.handleProfileChange}
       />
       <LeftSection
         isPreviewMode={props.state.isPreviewMode}
         infoSection={props.state.InfoSection}
+        handleInfoChange={props.handleInfoChange}
         skills={props.state.Skills}
         languages={props.state.Languages}
       />

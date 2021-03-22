@@ -13,14 +13,21 @@ function EducationInput(props) {
     <section className="EducationSection">
       <h5>EDUACTION</h5>
       <button type="button" className="education-button">
-        <i class="fas fa-plus"></i>
+        <i className="fas fa-plus"></i>
       </button>
     </section>
   );
 }
 
 function EducationPreview(props) {
-  return;
+  return (
+    <section className="EducationSection">
+      <h5>EDUACTION</h5>
+      <button type="button" className="education-button">
+        <i className="fas fa-plus"></i>
+      </button>
+    </section>
+  );
 }
 
 export default Education;

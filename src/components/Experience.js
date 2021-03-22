@@ -13,14 +13,21 @@ function ExperienceInput(props) {
     <section className="ExperienceSection">
       <h5>EXPERIENCE</h5>
       <button type="button" className="experience-button">
-        <i class="fas fa-plus"></i>
+        <i className="fas fa-plus"></i>
       </button>
     </section>
   );
 }
 
 function ExperiencePreview(props) {
-  return;
+  return (
+    <section className="ExperienceSection">
+      <h5>EXPERIENCE</h5>
+      <button type="button" className="experience-button">
+        <i className="fas fa-plus"></i>
+      </button>
+    </section>
+  );
 }
 
 export default Experience;

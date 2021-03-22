@@ -1,0 +1,14 @@
+.Resume {
+  width: 210mm;
+  height: 297mm;
+  padding: 5%;
+  background: lightpink;
+  /*Grid*/
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 15% 85%;
+}
+.Resume > * {
+  background: lightskyblue;
+  border: 2px solid black;
+}

@@ -13,14 +13,21 @@ function SkillsInput(props) {
     <section className="SkillsSection">
       <h5>SKILLS</h5>
       <button type="button" className="skills-button">
-        <i class="fas fa-plus"></i>
+        <i className="fas fa-plus"></i>
       </button>
     </section>
   );
 }
 
 function SkillsPreview(props) {
-  return;
+  return (
+    <section className="SkillsSection">
+      <h5>SKILLS</h5>
+      <button type="button" className="skills-button">
+        <i className="fas fa-plus"></i>
+      </button>
+    </section>
+  );
 }
 
 /*function InfoSection(props) {

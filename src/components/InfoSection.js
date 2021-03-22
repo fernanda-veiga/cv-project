@@ -4,11 +4,14 @@ function InfoSection(props) {
   if (props.isPreviewMode === true) {
     return <InfoSectionPreview infoSection={props.infoSection} />;
   } else {
-    return <InfoSectionInput infoSection={props.infoSection} />;
+    return (
+      <InfoSectionInput
+        infoSection={props.infoSection}
+        handleInfoChange={props.handleInfoChange}
+      />
+    );
   }
 }
-
-//handleFormChange={props.handleFormChange}
 
 function InfoSectionInput(props) {
   const infoValues = Object.entries(props.infoSection);
@@ -20,18 +23,20 @@ function InfoSectionInput(props) {
   ];
 
   return (
-    <section className="InfoSection">
+    <section key="InfoSection" className="InfoSection">
       {infoValues.map((entry, index) => {
         return (
-          <div>
-            <div>{icons[index]}</div>
+          <div key={`InfoSection-div-${index}`}>
+            <div key={`InfoSection-icon-${index}`} className="icon">
+              {icons[index]}
+            </div>
             <input
-              key={`InfoSection-${index}`}
+              key={`InfoSection-input-${index}`}
               id={entry[0]}
               type="text"
               value={entry[1]}
               placeholder={entry[0].charAt(0).toUpperCase() + entry[0].slice(1)}
-              onChange={props.handleFormChange}
+              onChange={props.handleInfoChange}
             ></input>
           </div>
         );
@@ -50,12 +55,14 @@ function InfoSectionPreview(props) {
   ];
 
   return (
-    <section className="InfoSection">
+    <section key="InfoSection" className="InfoSection">
       {infoValues.map((entry, index) => {
         return (
-          <div>
-            <div>{icons[index]}</div>
-            <p key={`InfoSection-${index}`} id={entry[0]}>
+          <div key={`InfoSection-div-${index}`}>
+            <div key={`InfoSection-icon-${index}`} className="icon">
+              {icons[index]}
+            </div>
+            <p key={`InfoSection-p-${index}`} id={entry[0]}>
               {entry[1]}
             </p>
           </div>

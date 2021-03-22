@@ -4,6 +4,8 @@ import Resume from "./components/Resume";
 import "./styles/App.css";
 import "./styles/TopBar.css";
 import "./styles/Resume.css";
+import "./styles/ProfileSection.css";
+import "./styles/LeftSection.css";
 
 class App extends Component {
   constructor(props) {
@@ -27,6 +29,18 @@ class App extends Component {
     };
   }
 
+  handleProfileChange = (event) => {
+    let changedProperty = this.state.ProfileSection;
+    changedProperty[event.target.id] = event.target.value;
+    this.setState({ ProfileSection: changedProperty });
+  };
+
+  handleInfoChange = (event) => {
+    let changedProperty = this.state.InfoSection;
+    changedProperty[event.target.id] = event.target.value;
+    this.setState({ InfoSection: changedProperty });
+  };
+
   togglePreviewMode = () => {
     console.log(this.state.isPreviewMode);
     this.setState({ isPreviewMode: !this.state.isPreviewMode });
@@ -36,7 +50,11 @@ class App extends Component {
     return (
       <div className="App">
         <TopBar togglePreviewMode={this.togglePreviewMode} />
-        <Resume state={this.state} />
+        <Resume
+          state={this.state}
+          handleProfileChange={this.handleProfileChange}
+          handleInfoChange={this.handleInfoChange}
+        />
       </div>
     );
   }

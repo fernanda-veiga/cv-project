@@ -13,14 +13,21 @@ function LanguagesInput(props) {
     <section className="LanguagesSection">
       <h5>LANGUAGES</h5>
       <button type="button" className="languages-button">
-        <i class="fas fa-plus"></i>
+        <i className="fas fa-plus"></i>
       </button>
     </section>
   );
 }
 
 function LanguagesPreview(props) {
-  return;
+  return (
+    <section className="LanguagesSection">
+      <h5>LANGUAGES</h5>
+      <button type="button" className="languages-button">
+        <i className="fas fa-plus"></i>
+      </button>
+    </section>
+  );
 }
 
 export default Languages;

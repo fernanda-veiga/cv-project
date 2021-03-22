@@ -1,3 +1,21 @@
+.ProfileSection {
+  /*Grid*/
+  grid-column: 1/3;
+  /*Flex*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ProfileSection input {
+  width: 50%;
+}
+#name {
+  font-size: 30px;
+}
+#position {
+  font-size: 20px;
+}
 /*.profileSection {
   padding: 2vw;
   border-bottom: 2px solid gray;
