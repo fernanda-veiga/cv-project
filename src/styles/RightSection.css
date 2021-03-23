@@ -49,6 +49,7 @@
 .Education-CurrentEducation-degree {
   font-size: 14px;
   font-weight: bold;
+  word-break: break-word;
 }
 
 .Experience-CurrentExperience-period,
@@ -64,6 +65,7 @@
 .Education-CurrentEducation-institution,
 .Education-CurrentEducation-location {
   font-size: 12px;
+  word-break: break-word;
 }
 
 .Experience-delete,

@@ -165,6 +165,7 @@ class App extends Component {
       <div className="App">
         <TopBar togglePreviewMode={this.togglePreviewMode} />
         <Resume
+          isPreviewMode={this.state.isPreviewMode}
           state={this.state}
           handleProfileChange={this.handleProfileChange}
           handleInfoChange={this.handleInfoChange}
