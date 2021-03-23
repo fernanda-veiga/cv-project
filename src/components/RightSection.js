@@ -15,6 +15,9 @@ function RightSection(props) {
       <Education
         isPreviewMode={props.isPreviewMode}
         education={props.education}
+        handleEducationChange={props.handleEducationChange}
+        addEducation={props.addEducation}
+        deleteEducation={props.deleteEducation}
       />
     </section>
   );

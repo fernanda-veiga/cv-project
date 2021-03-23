@@ -2,7 +2,6 @@ import React from "react";
 import ProfileSection from "./ProfileSection";
 import LeftSection from "./LeftSection";
 import RightSection from "./RightSection";
-//import InfoSection from "./components/InfoSection";
 
 function Resume(props) {
   return (
@@ -32,30 +31,12 @@ function Resume(props) {
         addExperience={props.addExperience}
         deleteExperience={props.deleteExperience}
         education={props.state.Education}
+        handleEducationChange={props.handleEducationChange}
+        addEducation={props.addEducation}
+        deleteEducation={props.deleteEducation}
       />
-      {/*<ProfileSection
-        profileSection={props.state.profileSection}
-        handleFormChange={props.handleFormChange}
-        isPreviewMode={props.isPreviewMode}
-      />
-      <section className="LeftSection">
-        <InfoSection
-          infoSection={props.state.infoSection}
-          handleFormChange={props.handleFormChange}
-          isPreviewMode={props.isPreviewMode}
-        />
-      </section>*/}
     </section>
   );
 }
-
-/*<ProfileSection />
-<LeftSection />
-  <InfoSection />
-  <Skills />
-  <Languages />
-<RightSection />
-  <Experience />
-  <Education />*/
 
 export default Resume;

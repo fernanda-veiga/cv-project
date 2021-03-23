@@ -29,28 +29,4 @@ function LeftSection(props) {
   );
 }
 
-/*<LeftSection
-        infoSection={props.state.InfoSection}
-        skills={props.state.Skills}
-        languages={props.state.Languages}
-      />*/
-
-//onChange={props.handleFormChange}
-
-/*function ProfileSectionPreview(props) {
-  const profileValues = Object.entries(props.profileSection);
-
-  return (
-    <section className="profileSection">
-      {profileValues.map((entry, index) => {
-        return (
-          <p key={`profile-form-input-${index}`} id={entry[0]}>
-            {entry[1]}
-          </p>
-        );
-      })}
-    </section>
-  );
-}*/
-
 export default LeftSection;

@@ -41,7 +41,15 @@ class App extends Component {
           description: "",
         },
       },
-      Education: [],
+      Education: {
+        allEducation: [],
+        newEducation: {
+          degree: "",
+          period: "",
+          institution: "",
+          location: "",
+        },
+      },
     };
   }
 
@@ -108,10 +116,10 @@ class App extends Component {
     changedProperty.allExperience.push(changedProperty.newExperience);
     changedProperty.newExperience = {
       title: "",
+      period: "",
       company: "",
       location: "",
       description: "",
-      period: "",
     };
     this.setState({ Experience: changedProperty });
   };
@@ -121,6 +129,31 @@ class App extends Component {
     const index = event.target.id.replace(/^\D+/g, "");
     changedProperty.allExperience.splice(index, 1);
     this.setState({ Experience: changedProperty });
+  };
+
+  handleEducationChange = (event) => {
+    let changedProperty = this.state.Education;
+    changedProperty.newEducation[event.target.id] = event.target.value;
+    this.setState({ Education: changedProperty });
+  };
+
+  addEducation = () => {
+    const changedProperty = this.state.Education;
+    changedProperty.allEducation.push(changedProperty.newEducation);
+    changedProperty.newEducation = {
+      degree: "",
+      period: "",
+      institution: "",
+      location: "",
+    };
+    this.setState({ Education: changedProperty });
+  };
+
+  deleteEducation = (event) => {
+    const changedProperty = this.state.Education;
+    const index = event.target.id.replace(/^\D+/g, "");
+    changedProperty.allEducation.splice(index, 1);
+    this.setState({ Education: changedProperty });
   };
 
   togglePreviewMode = () => {
@@ -144,62 +177,13 @@ class App extends Component {
           handleExperienceChange={this.handleExperienceChange}
           addExperience={this.addExperience}
           deleteExperience={this.deleteExperience}
+          handleEducationChange={this.handleEducationChange}
+          addEducation={this.addEducation}
+          deleteEducation={this.deleteEducation}
         />
       </div>
     );
   }
 }
 
-/*
-<App />
-  <TopBar />
-  <Resume />
-    <ProfileSection />
-    <LeftSection />
-      <InfoSection />
-      <Skills />
-      <Languages />
-    <RightSection />
-      <Experience />
-      <Education />
-*/
-
 export default App;
-
-/*import React, { Component } from "react";
-import TopBar from "./components/TopBar";
-import ProfileSection from "./components/ProfileSection";
-import InfoSection from "./components/InfoSection";
-import "./styles/ProfileSection.css";
-import "./styles/TopBar.css";
-
-class App extends Component {
-  
-  togglePreviewMode = () => {
-    this.setState({ isPreviewMode: !this.state.isPreviewMode });
-  };
-
-  handleFormChange = (event) => {
-    let changedProperty = this.state[event.target.id];
-    changedProperty = event.target.value;
-    this.setState({ profileSection: changedProperty });
-  };
-
-  render() {
-    return (
-      <div className="App">
-        <TopBar togglePreviewMode={this.togglePreviewMode} />
-        <Resume
-          state={this.state}
-          handleFormChange={this.handleFormChange}
-          isPreviewMode={this.state.isPreviewMode}
-        />
-      </div>
-    );
-  }
-}
-
-
-
-export default App;
-*/

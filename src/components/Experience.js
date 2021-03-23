@@ -16,8 +16,6 @@ function Experience(props) {
 }
 
 function ExperienceInput(props) {
-  console.log(props.experience.newExperience);
-  console.log(Object.entries(props.experience.newExperience));
   const newExperience = Object.entries(props.experience.newExperience);
 
   return (
@@ -74,6 +72,7 @@ function ExperiencePreview(props) {
                   <p
                     key={`${field[0]}-${index}`}
                     id={`${field[0]}-${index}`}
+                    className={`Experience-CurrentExperience-${field[0]}`}
                   >{`${field[1]}`}</p>
                 );
               })}
@@ -100,6 +99,7 @@ function CurrentExperience(props) {
                   <p
                     key={`${field[0]}-${index}`}
                     id={`${field[0]}-${index}`}
+                    className={`Experience-CurrentExperience-${field[0]}`}
                   >{`${field[1]}`}</p>
                 );
               })}

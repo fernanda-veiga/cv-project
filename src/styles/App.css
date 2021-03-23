@@ -1,24 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
 .App {
-  width: 210mm;
   background: #d5d8dc;
   /*Flex*/
   display: flex;
   flex-direction: column;
-  /*padding: 0 10vw 50px 10vw;
-  
-  
   align-items: center;
-  gap: 50px;*/
 }
-
-/*.resume {
-  padding: 3vw;
-  width: 80vw;
-  height: 113vw;
-  background: white;
-}
-
-.resume-content-left {
-  background: coral;
-  width: 30%;
-}*/
