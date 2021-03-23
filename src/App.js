@@ -26,7 +26,10 @@ class App extends Component {
         allSkills: [],
         newSkill: "",
       },
-      Languages: [],
+      Languages: {
+        allLanguages: [],
+        newLanguage: "",
+      },
       Experience: [],
       Education: [],
     };
@@ -64,6 +67,26 @@ class App extends Component {
     this.setState({ Skills: changedProperty });
   };
 
+  handleLanguageChange = (event) => {
+    let changedProperty = this.state.Languages;
+    changedProperty.newLanguage = event.target.value;
+    this.setState({ Languages: changedProperty });
+  };
+
+  addLanguage = () => {
+    const changedProperty = this.state.Languages;
+    changedProperty.allLanguages.push(changedProperty.newLanguage);
+    changedProperty.newLanguage = "";
+    this.setState({ Languages: changedProperty });
+  };
+
+  deleteLanguage = (event) => {
+    const changedProperty = this.state.Languages;
+    const index = event.target.id.replace(/^\D+/g, "");
+    changedProperty.allLanguages.splice(index, 1);
+    this.setState({ Languages: changedProperty });
+  };
+
   togglePreviewMode = () => {
     console.log(this.state.isPreviewMode);
     this.setState({ isPreviewMode: !this.state.isPreviewMode });
@@ -80,6 +103,9 @@ class App extends Component {
           handleSkillChange={this.handleSkillChange}
           addSkill={this.addSkill}
           deleteSkill={this.deleteSkill}
+          handleLanguageChange={this.handleLanguageChange}
+          addLanguage={this.addLanguage}
+          deleteLanguage={this.deleteLanguage}
         />
       </div>
     );

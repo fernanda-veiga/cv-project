@@ -40,3 +40,99 @@
   justify-content: center;
   align-items: center;
 }
+
+/*Skills Section*/
+.SkillsSection > *,
+.LanguagesSection > * {
+  background: limegreen;
+}
+
+.Skills-title,
+.Languages-title {
+  padding-bottom: 3px;
+  border-bottom: 1px solid gray;
+}
+
+.Skills-title h5,
+.Languages-title h5 {
+  font-size: 14px;
+}
+
+.Skills-CurrentSkills,
+.Languages-CurrentLanguages {
+  padding: 5px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.Skills-CurrentSkills > *,
+.Languages-CurrentLanguages > * {
+  padding: 3px;
+  background: lightgrey;
+  border-radius: 2px;
+  font-size: 12px;
+  /*Flex*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.Skills-delete,
+.Languages-delete {
+  background: none;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: gray;
+  transition: all 0.4s;
+}
+
+.Skills-delete:hover,
+.Languages-delete:hover {
+  color: black;
+}
+
+.Skills-delete::before,
+.Languages-delete::before {
+  font-family: "Font Awesome\ 5 Free";
+  content: "\f2ed";
+  font-size: 12px;
+}
+
+.Skills-input,
+.Languages-input {
+  width: 100%;
+  display: flex;
+  gap: 5px;
+}
+
+.Skills-input input,
+.Languages-input input {
+  width: 90%;
+  font-size: 12px;
+  padding: 3px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+}
+
+.Skills-input button,
+.Languages-input button {
+  width: 10%;
+  font-size: 12px;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: gray;
+  transition: all 0.4s;
+}
+
+.Skills-input button:hover,
+.Languages-input button:hover {
+  color: black;
+}

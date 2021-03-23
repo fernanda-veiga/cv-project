@@ -20,7 +20,10 @@ function LeftSection(props) {
       />
       <Languages
         isPreviewMode={props.isPreviewMode}
-        laguanges={props.languages}
+        languages={props.languages}
+        handleLanguageChange={props.handleLanguageChange}
+        addLanguage={props.addLanguage}
+        deleteLanguage={props.deleteLanguage}
       />
     </section>
   );

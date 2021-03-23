@@ -21,6 +21,9 @@ function Resume(props) {
         addSkill={props.addSkill}
         deleteSkill={props.deleteSkill}
         languages={props.state.Languages}
+        handleLanguageChange={props.handleLanguageChange}
+        addLanguage={props.addLanguage}
+        deleteLanguage={props.deleteLanguage}
       />
       <RightSection
         isPreviewMode={props.state.isPreviewMode}
