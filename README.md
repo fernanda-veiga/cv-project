@@ -33,6 +33,7 @@ To use the website, click [here](http://fernanda-veiga.github.io/cv-project).
 
 To use the code, download the files and, on the file's directory, type the following on the terminal:
 
-````npm install
-npm run start```
-````
+```
+npm install
+npm run start
+```
