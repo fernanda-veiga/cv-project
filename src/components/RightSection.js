@@ -8,6 +8,9 @@ function RightSection(props) {
       <Experience
         isPreviewMode={props.isPreviewMode}
         experience={props.experience}
+        handleExperienceChange={props.handleExperienceChange}
+        addExperience={props.addExperience}
+        deleteExperience={props.deleteExperience}
       />
       <Education
         isPreviewMode={props.isPreviewMode}

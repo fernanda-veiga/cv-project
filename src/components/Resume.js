@@ -28,6 +28,9 @@ function Resume(props) {
       <RightSection
         isPreviewMode={props.state.isPreviewMode}
         experience={props.state.Experience}
+        handleExperienceChange={props.handleExperienceChange}
+        addExperience={props.addExperience}
+        deleteExperience={props.deleteExperience}
         education={props.state.Education}
       />
       {/*<ProfileSection

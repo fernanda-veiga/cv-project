@@ -6,6 +6,7 @@ import "./styles/TopBar.css";
 import "./styles/Resume.css";
 import "./styles/ProfileSection.css";
 import "./styles/LeftSection.css";
+import "./styles/RightSection.css";
 
 class App extends Component {
   constructor(props) {
@@ -30,7 +31,16 @@ class App extends Component {
         allLanguages: [],
         newLanguage: "",
       },
-      Experience: [],
+      Experience: {
+        allExperience: [],
+        newExperience: {
+          title: "",
+          period: "",
+          company: "",
+          location: "",
+          description: "",
+        },
+      },
       Education: [],
     };
   }
@@ -87,8 +97,33 @@ class App extends Component {
     this.setState({ Languages: changedProperty });
   };
 
+  handleExperienceChange = (event) => {
+    let changedProperty = this.state.Experience;
+    changedProperty.newExperience[event.target.id] = event.target.value;
+    this.setState({ Experience: changedProperty });
+  };
+
+  addExperience = () => {
+    const changedProperty = this.state.Experience;
+    changedProperty.allExperience.push(changedProperty.newExperience);
+    changedProperty.newExperience = {
+      title: "",
+      company: "",
+      location: "",
+      description: "",
+      period: "",
+    };
+    this.setState({ Experience: changedProperty });
+  };
+
+  deleteExperience = (event) => {
+    const changedProperty = this.state.Experience;
+    const index = event.target.id.replace(/^\D+/g, "");
+    changedProperty.allExperience.splice(index, 1);
+    this.setState({ Experience: changedProperty });
+  };
+
   togglePreviewMode = () => {
-    console.log(this.state.isPreviewMode);
     this.setState({ isPreviewMode: !this.state.isPreviewMode });
   };
 
@@ -106,6 +141,9 @@ class App extends Component {
           handleLanguageChange={this.handleLanguageChange}
           addLanguage={this.addLanguage}
           deleteLanguage={this.deleteLanguage}
+          handleExperienceChange={this.handleExperienceChange}
+          addExperience={this.addExperience}
+          deleteExperience={this.deleteExperience}
         />
       </div>
     );

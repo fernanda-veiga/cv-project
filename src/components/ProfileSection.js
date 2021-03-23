@@ -4,7 +4,6 @@ function ProfileSection(props) {
   if (props.isPreviewMode === true) {
     return <ProfileSectionPreview profileSection={props.profileSection} />;
   } else {
-    console.log(props.profileSection);
     return (
       <ProfileSectionInput
         profileSection={props.profileSection}
@@ -20,7 +19,6 @@ function ProfileSectionInput(props) {
   return (
     <section key="ProfileSection" className="ProfileSection">
       {profileValues.map((entry, index) => {
-        console.log(entry);
         return (
           <input
             key={`ProfileSection-${index}`}

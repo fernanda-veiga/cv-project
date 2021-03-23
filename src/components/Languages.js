@@ -1,8 +1,6 @@
 import React from "react";
 
 function Languages(props) {
-  console.log("1");
-  console.log(props.languages);
   if (props.isPreviewMode === true) {
     return <LanguagesPreview languages={props.languages} />;
   } else {
@@ -18,9 +16,6 @@ function Languages(props) {
 }
 
 function LanguagesInput(props) {
-  console.log("2");
-  console.log(props.languages);
-  console.log(props.languages.allLanguages);
   return (
     <section className="LanguagesSection">
       <div className="Languages-title">
@@ -76,8 +71,6 @@ function LanguagesPreview(props) {
 
 function CurrentLanguages(props) {
   const currentLanguages = props.currentLanguages;
-  console.log("test");
-  console.log(currentLanguages);
 
   if (currentLanguages !== []) {
     return currentLanguages.map((language, index) => {

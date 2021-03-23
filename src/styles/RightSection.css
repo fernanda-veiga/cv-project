@@ -1,4 +1,5 @@
-.LeftSection {
+.RightSection {
+  background: lightgreen;
   padding: 10px;
   /*Flex*/
   display: flex;
@@ -6,82 +7,58 @@
   gap: 20px;
 }
 
-/*Info Section*/
-.InfoSection {
+/*Experience Section*/
+.ExperienceSection,
+.EducationSection {
+  background: lightpink;
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-.InfoSection > * {
-  width: 100%;
-  display: flex;
-  gap: 5px;
-}
-
-.InfoSection input,
-.InfoSection p {
-  width: 90%;
-  font-size: 12px;
-  padding: 3px;
-  outline: none;
-  border-radius: 3px;
-  display: flex;
-  align-items: center;
-}
-
-.InfoSection input {
-  border: 2px solid lightgray;
-}
-
-.InfoSection p {
-  word-break: break-word;
-}
-
-.icon {
-  width: 10%;
-  font-size: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/*Skills Section*/
-.Skills-title,
-.Languages-title {
+.Experience-title,
+.Education-title {
   padding-bottom: 3px;
   border-bottom: 2px solid lightgray;
 }
 
-.Skills-title h5,
-.Languages-title h5 {
+.Experience-title h5,
+.Education-title h5 {
   font-size: 14px;
   font-weight: bold;
 }
 
-.Skills-CurrentSkills,
-.Languages-CurrentLanguages {
-  padding: 5px 0px;
+.Experience-CurrentExperience,
+.Education-CurrentEducation {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 5px;
 }
 
-.Skills-CurrentSkills > *,
-.Languages-CurrentLanguages > * {
-  padding: 5px;
+.Experience-CurrentExperience > *,
+.Education-CurrentEducation > * {
+  padding: 5px 0px;
+  background: lightseagreen;
+  border: 2px solid lightgray;
+  position: relative;
+  /*padding: 5px;
   background: lightgrey;
   border-radius: 3px;
-  font-size: 12px;
+  font-size: 12px;*/
   /*Flex*/
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
   gap: 5px;
 }
 
-.Skills-delete,
-.Languages-delete {
+.Experience-CurrentExperience > * p,
+.Education-CurrentEducation > * p {
+  font-size: 12px;
+}
+
+.Experience-delete,
+.Education-delete {
   background: none;
   border: none;
   outline: none;
@@ -90,22 +67,25 @@
   cursor: pointer;
   color: gray;
   transition: all 0.4s;
+  position: absolute;
+  top: 5px;
+  right: 0px;
 }
 
-.Skills-delete:hover,
-.Languages-delete:hover {
+.Experience-delete:hover,
+.Education-delete:hover {
   color: black;
 }
 
-.Skills-delete::before,
-.Languages-delete::before {
+.Experience-delete::before,
+.Education-delete::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f00d";
   font-size: 12px;
 }
 
-.Skills-input,
+/*.Skills-input,
 .Languages-input {
   width: 100%;
   display: flex;
@@ -137,4 +117,4 @@
 .Skills-input button:hover,
 .Languages-input button:hover {
   color: black;
-}
+}*/
